@@ -1,0 +1,358 @@
+Handle: Mock MDF Model
+Version: v7.1.9
+Nodes:
+  initiative:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Tags:
+      Category: study
+      Assignment: core
+      Class: primary
+      Template: 'Yes'
+    Props:
+      - initiative_name
+      - initiative_acronym
+      - initiative_full_description
+      - initiative_external_url
+      - initiative_short_name
+
+  inquiry:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Tags:
+      Category: study
+      Assignment: core
+      Class: primary
+      Template: 'Yes'
+    Props:
+      - inquiry_name
+      - inquiry_acronym
+      - inquiry_description
+      - short_description
+      - inquiry_external_url
+      - primary_investigator_name
+      - primary_investigator_email
+      - co_investigator_name
+      - co_investigator_email
+
+
+  participant:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Tags:
+      Category: study
+      Assignment: core
+      Class: primary
+      Template: 'Yes'
+    Props:
+      - inquiry_participant_id
+      - participant_id
+
+  diagnosis:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Tags:
+      Category: case
+      Assignment: core
+      Class: primary
+      Template: 'Yes'
+    Props:
+      - inquiry_diagnosis_id
+      - diagnosis_id
+      - disease_type
+      - vital_status
+      - age_at_diagnosis
+
+  specimen:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Tags:
+      Category: case
+      Assignment: core
+      Class: primary
+      Template: 'Yes'
+    Props:
+      - specimen_id
+      - specimen_type
+      - specimen_description
+      - specimen_type_category
+      - specimen_tumor_status
+      - specimen_anatomic_site
+      - specimen_age_at_collection
+
+  file:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Tags:
+      Category: data_file
+      Assignment: core
+      Class: primary
+      Template: 'Yes'
+    Props:
+      - file_id
+      - md5sum
+
+PropDefinitions:
+  participant_id:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+    Req: true
+    Term:
+    - Origin: caDSR
+      Original Source: CDS
+      Code: '12220014'
+      Value: Subject Data Origin Identifier
+      Version: '1.00'
+  inquiry_participant_id:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+    Req: true
+    Key: true
+  vital_status:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Enum:
+    - Unspecified
+    - Alive
+    - Unknown
+    - Not reported
+    - Some Value
+    Term:
+    - Origin: caDSR
+      Original Source: NCI Std
+      Code: '2847330'
+      Value: Participant Vital Status Type
+      Version: '1.00'
+  # diagnosis
+  diagnosis_id:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+  inquiry_diagnosis_id:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+    Req: true
+    Key: true
+  disease_type:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Enum:
+    - Lorem ipsum
+    - Dolor sit amet
+    - Consectetur adipiscing elit
+    - Sed do eiusmod
+    - Ut enim ad minim veniam
+    Term:
+    - Origin: caDSR
+      Original Source: CDS
+      Code: '13471160'
+      Value: Diagnosis Disease or Disorder Morphology Disease
+      Version: '1.00'
+  age_at_diagnosis:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: integer
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: '10609539'
+      Value: Subject Age at Diagnosis Integer
+      Version: '1.00'
+  # inquiry
+  inquiry_acronym:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: '11459812'
+      Value: Study Short Name Text
+      Version: '1.00'
+  inquiry_description:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+    Req: Preferred
+  short_description:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+    Req: Preferred
+  inquiry_external_url:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: url
+    Req: Preferred
+  inquiry_name:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+    Req: 'Yes'
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: '11459810'
+      Value: Study Name
+      Version: '1.00'
+  primary_investigator_name:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+    Req: Preferred
+  primary_investigator_email:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+    Req: Preferred
+  co_investigator_name:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+  co_investigator_email:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+  # specimen
+  specimen_description:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+    Term:
+    - Origin: caDSR
+      Original Source: CCR
+      Code: '2003907'
+      Value: Sample Description Text
+      Version: '3.00'
+  specimen_type_category:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Enum:
+    - Lor
+    - Ipsum
+    - Dolor
+    - Sit
+    - Amet
+    - Consectetur
+    - Adipiscing
+    Term:
+    - Origin: caDSR
+      Original Source: CDS
+      Code: '12445832'
+      Value: Specimen Material Biospecimen Category
+      Version: '1.00'
+  specimen_age_at_collection:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: integer
+    Term:
+    - Origin: caDSR
+      Original Source: CDS
+      Code: '14473376'
+      Value: Subject Age At Specimen Collection Day Count
+      Version: '1.00'
+  specimen_anatomic_site:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Enum:
+    - Unknown
+    - Consectetur
+    - Dolor
+    - Sit
+    - Amet
+    Term:
+    - Origin: caDSR
+      Code: '12083894'
+      Value: Specimen Original Anatomic Site Uberon Identifier
+      Version: '1.00'
+  specimen_id:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+    Req: 'Yes'
+    Key: true
+    Term:
+    - Origin: caDSR
+      Code: '6921892'
+      Value: Biospecimen Source Laboratory Identifier
+      Version: '1.00'
+  specimen_tumor_status:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Enum:
+    - Nominal
+    - Not Reported
+    - Unknown
+    - XYZ
+    - ABC
+    Req: 'Yes'
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: '14688604'
+      Value: Specimen Neoplasm Category
+      Version: '1.00'
+  specimen_type:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Enum:
+    - XYZ
+    - ABC
+    - Unknown
+    - Not Reported
+    Req: 'Yes'
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: "11253427"
+      Value: Specimen Material OBIB Source
+      Version: '1.00'
+  # initiative
+  initiative_acronym:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Src: Internally-curated
+    Type: string
+    Req: 'Yes'
+    Key: true
+  initiative_external_url:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Src: Internally-curated
+    Type: string
+    Req: Preferred
+  initiative_full_description:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Src: Internally-curated
+    Type: string
+    Req: Preferred
+  initiative_name:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Src: Internally-curated
+    Type: string
+    Req: 'Yes'
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: '11444542'
+      Value: Program Name Text
+      Version: '1.00'
+  initiative_short_description:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Src: Internally-curated
+    Type: string
+    Req: Preferred
+  initiative_short_name:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
+    Type: string
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: "11459801"
+      Value: Program Short Name Text
+      Version: '1.00'
+
+Relationships:
+  of_initiative:
+    Props: null
+    Mul: many_to_one
+    Ends:
+      - Src: inquiry
+        Dst: initiative
+  of_inquiry:
+    Props: null
+    Mul: many_to_one
+    Ends:
+      - Src: participant
+        Dst: inquiry
+      - Src: file
+        Dst: inquiry
+  of_participant:
+    Props: null
+    Mul: many_to_one
+    Ends:
+      - Src: diagnosis
+        Dst: participant
+      - Src: specimen
+        Dst: participant
+      - Src: file
+        Dst: participant
+        Mul: many_to_many
+  from_specimen:
+    Props: null
+    Mul: many_to_many
+    Ends:
+      - Src: file
+        Dst: specimen
