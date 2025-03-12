@@ -2,7 +2,7 @@ Handle: Mock MDF Model
 Version: v7.1.9
 Nodes:
   initiative:
-    Desc: "Lorem ipsum odor amet, consectetuer adipiscing elit. Inceptos senectus urna venenatis augue porta dolor nostra mus. Nec litora mattis condimentum mi ultricies vitae laoreet"
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Tags:
       Category: study
       Assignment: core
@@ -16,7 +16,7 @@ Nodes:
       - initiative_short_name
 
   inquiry:
-    Desc: "Sem morbi turpis himenaeos vitae ac magnis ultrices tristique. Libero donec finibus facilisis parturient dignissim eu enim. Mus class orci parturient sed eget"
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Tags:
       Category: study
       Assignment: core
@@ -35,7 +35,7 @@ Nodes:
 
 
   participant:
-    Desc: "Scelerisque nisl erat nisi donec laoreet massa, hac erat. Fermentum sapien vitae congue fringilla id metus. Quisque facilisis porta vulputate risus auctor sodales?"
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Tags:
       Category: study
       Assignment: core
@@ -46,7 +46,7 @@ Nodes:
       - participant_id
 
   diagnosis:
-    Desc: "Condimentum potenti at malesuada tellus fermentum convallis. "
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Tags:
       Category: case
       Assignment: core
@@ -60,7 +60,7 @@ Nodes:
       - age_at_diagnosis
 
   specimen:
-    Desc: "Specimen tissue type collected from the participant."
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Tags:
       Category: case
       Assignment: core
@@ -76,7 +76,7 @@ Nodes:
       - specimen_age_at_collection
 
   file:
-    Desc: "A set of related records kept together provided by a submitter."
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Tags:
       Category: data_file
       Assignment: core
@@ -88,7 +88,7 @@ Nodes:
 
 PropDefinitions:
   participant_id:
-    Desc: 'TODO'
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
     Req: true
     Term:
@@ -98,12 +98,12 @@ PropDefinitions:
       Value: Subject Data Origin Identifier
       Version: '1.00'
   inquiry_participant_id:
-    Desc: 'TODO'
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
     Req: true
     Key: true
   vital_status:
-    Desc: Vital status as of last known follow up
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Enum:
     - Unspecified
     - Unknown
@@ -118,15 +118,15 @@ PropDefinitions:
       Version: '1.00'
   # diagnosis
   diagnosis_id:
-    Desc: Internal identifier
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
   inquiry_diagnosis_id:
-    Desc: The property inquiry_diagnosis_id is a compound property, combining the property diagnosis_id and the parent property participant.inquiry_participant_id. It is the ID property for the node diagnosis.
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
     Req: true
     Key: true
   disease_type:
-    Desc: Type of disease [?]
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Enum:
     - Acinar Cell Neoplasms
     - Adenomas and Adenocarcinomas
@@ -138,7 +138,7 @@ PropDefinitions:
       Value: Diagnosis Disease or Disorder Morphology Disease
       Version: '1.00'
   age_at_diagnosis:
-    Desc: Participant age at relevant diagnosis
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: integer
     Term:
     - Origin: caDSR
@@ -148,7 +148,7 @@ PropDefinitions:
       Version: '1.00'
   # inquiry
   inquiry_acronym:
-    Desc: Short acronym or other inquiry desginator
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
     Term:
     - Origin: caDSR
@@ -157,19 +157,19 @@ PropDefinitions:
       Value: Study Short Name Text
       Version: '1.00'
   inquiry_description:
-    Desc: Human-readable inquiry description
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
     Req: Preferred
   short_description:
-    Desc: 'TODO'
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
     Req: Preferred
   inquiry_external_url:
-    Desc: Website or other url relevant to inquiry
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: url
     Req: Preferred
   inquiry_name:
-    Desc: Official name of inquiry
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
     Req: 'Yes'
     Term:
@@ -179,22 +179,22 @@ PropDefinitions:
       Value: Study Name
       Version: '1.00'
   primary_investigator_name:
-    Desc: Name of principal investigator
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
     Req: Preferred
   primary_investigator_email:
-    Desc: Email of principal investigator
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
     Req: Preferred
   co_investigator_name:
-    Desc: Name of co-principal investigator
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
   co_investigator_email:
-    Desc: Email of co-principal investigator
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
   # specimen
   specimen_description:
-    Desc: Text description of a specimen
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
     Term:
     - Origin: caDSR
@@ -203,7 +203,7 @@ PropDefinitions:
       Value: Sample Description Text
       Version: '3.00'
   specimen_type_category:
-    Desc: The kind of material that forms the specimen.
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Enum:
     - Analyte
     - Blood
@@ -232,7 +232,7 @@ PropDefinitions:
       Value: Specimen Material Biospecimen Category
       Version: '1.00'
   specimen_age_at_collection:
-    Desc: Number of days to collection, relative to index date
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: integer
     Term:
     - Origin: caDSR
@@ -241,7 +241,7 @@ PropDefinitions:
       Value: Subject Age At Specimen Collection Day Count
       Version: '1.00'
   specimen_anatomic_site:
-    Desc: Anatomic site from which specimen was collected
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Enum:
     - Bone marrow
     - Not specified in data
@@ -252,7 +252,7 @@ PropDefinitions:
       Value: Specimen Original Anatomic Site Uberon Identifier
       Version: '1.00'
   specimen_id:
-    Desc: specimen identifier as submitted by requestor
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
     Req: 'Yes'
     Key: true
@@ -262,7 +262,7 @@ PropDefinitions:
       Value: Biospecimen Source Laboratory Identifier
       Version: '1.00'
   specimen_tumor_status:
-    Desc: Tumor or normal status
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Enum:
     - Normal
     - Not Reported
@@ -277,7 +277,7 @@ PropDefinitions:
       Value: Specimen Neoplasm Category
       Version: '1.00'
   specimen_type:
-    Desc: Tissue type of this specimen
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Enum:
     - Analyte
     - Ascites
@@ -291,23 +291,23 @@ PropDefinitions:
       Version: '1.00'
   # initiative
   initiative_acronym:
-    Desc: The name of the initiative under which related studies will be grouped, expressed in the form of the acronym by which it will identified within the UI. <br>This property is used as the key via which inquiry records can be associated with the appropriate initiative during data loading, and to identify the correct records during data updates.
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Src: Internally-curated
     Type: string
     Req: 'Yes'
     Key: true
   initiative_external_url:
-    Desc: The external url to which users should be directed in order to learn more about the initiative.
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Src: Internally-curated
     Type: string
     Req: Preferred
   initiative_full_description:
-    Desc: A more detailed, multiple sentence description of the initiative.
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Src: Internally-curated
     Type: string
     Req: Preferred
   initiative_name:
-    Desc: The name of the initiative under which related studies will be grouped, in full text and unabbreviated form, exactly as it will be displayed within the UI.
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Src: Internally-curated
     Type: string
     Req: 'Yes'
@@ -318,12 +318,12 @@ PropDefinitions:
       Value: Program Name Text
       Version: '1.00'
   initiative_short_description:
-    Desc: An abbreviated, single sentence description of the initiative.
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Src: Internally-curated
     Type: string
     Req: Preferred
   initiative_short_name:
-    Desc: An acronym or abbreviated form of the title of a broad framework of goals under which related projects or other research activities are grouped. Example - CPTAC
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Type: string
     Term:
     - Origin: caDSR
@@ -364,14 +364,3 @@ Relationships:
     Ends:
       - Src: file
         Dst: specimen
-  of_file:
-    Props: null
-    Mul: many_to_one
-    Ends:
-      - Src: genomic_info
-        Dst: file
-      - Src: image
-        Dst: file
-        Mul: one_to_one
-      - Src: proteomic
-        Dst: file
