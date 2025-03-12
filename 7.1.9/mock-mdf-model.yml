@@ -1,0 +1,442 @@
+Handle: Mock MDF Model
+Version: v7.1.9
+Nodes:
+  initiative:
+    Desc: "Lorem ipsum odor amet, consectetuer adipiscing elit. Inceptos senectus urna venenatis augue porta dolor nostra mus. Nec litora mattis condimentum mi ultricies vitae laoreet"
+    Tags:
+      Category: study
+      Assignment: core
+      Class: primary
+      Template: 'Yes'
+    Props:
+      - initiative_name
+      - initiative_acronym
+      - initiative_full_description
+      - initiative_external_url
+      - initiative_short_name
+
+  inquiry:
+    Desc: "Sem morbi turpis himenaeos vitae ac magnis ultrices tristique. Libero donec finibus facilisis parturient dignissim eu enim. Mus class orci parturient sed eget"
+    Tags:
+      Category: study
+      Assignment: core
+      Class: primary
+      Template: 'Yes'
+    Props:
+      - inquiry_name
+      - inquiry_acronym
+      - inquiry_description
+      - short_description
+      - inquiry_external_url
+      - primary_investigator_name
+      - primary_investigator_email
+      - co_investigator_name
+      - co_investigator_email
+
+
+  participant:
+    Desc: "Scelerisque nisl erat nisi donec laoreet massa, hac erat. Fermentum sapien vitae congue fringilla id metus. Quisque facilisis porta vulputate risus auctor sodales?"
+    Tags:
+      Category: study
+      Assignment: core
+      Class: primary
+      Template: 'Yes'
+    Props:
+      - inquiry_participant_id
+      - participant_id
+
+  diagnosis:
+    Desc: "Condimentum potenti at malesuada tellus fermentum convallis. "
+    Tags:
+      Category: case
+      Assignment: core
+      Class: primary
+      Template: 'Yes'
+    Props:
+      - inquiry_diagnosis_id
+      - diagnosis_id
+      - disease_type
+      - vital_status
+      - age_at_diagnosis
+
+
+  treatment:
+    Desc: "Taciti velit tempor vivamus dignissim vestibulum erat."
+    Tags:
+      Category: case
+      Assignment: core
+      Class: secondary
+      Template: 'Yes'
+    Props:
+      - treatment_id
+      - treatment_type
+      - days_to_treatment
+      - response
+
+  specimen:
+    Desc: "Specimen tissue type collected from the participant."
+    Tags:
+      Category: case
+      Assignment: core
+      Class: primary
+      Template: 'Yes'
+    Props:
+      - specimen_id
+      - specimen_type
+      - specimen_description
+      - specimen_type_category
+      - specimen_tumor_status
+      - specimen_anatomic_site
+      - specimen_age_at_collection
+
+  file:
+    Desc: "A set of related records kept together provided by a submitter."
+    Tags:
+      Category: data_file
+      Assignment: core
+      Class: primary
+      Template: 'Yes'
+    Props:
+      - file_id
+      - md5sum
+
+PropDefinitions:
+  participant_id:
+    Desc: 'TODO'
+    Type: string
+    Req: true
+    Term:
+    - Origin: caDSR
+      Original Source: CDS
+      Code: '12220014'
+      Value: Subject Data Origin Identifier
+      Version: '1.00'
+  inquiry_participant_id:
+    Desc: 'TODO'
+    Type: string
+    Req: true
+    Key: true
+  vital_status:
+    Desc: Vital status as of last known follow up
+    Enum:
+    - Unspecified
+    - Unknown
+    - Dead
+    - Alive
+    - Not reported
+    Term:
+    - Origin: caDSR
+      Original Source: NCI Std
+      Code: '2847330'
+      Value: Participant Vital Status Type
+      Version: '1.00'
+  # diagnosis
+  diagnosis_id:
+    Desc: Internal identifier
+    Type: string
+  inquiry_diagnosis_id:
+    Desc: The property inquiry_diagnosis_id is a compound property, combining the property diagnosis_id and the parent property participant.inquiry_participant_id. It is the ID property for the node diagnosis.
+    Type: string
+    Req: true
+    Key: true
+  disease_type:
+    Desc: Type of disease [?]
+    Enum:
+    - Acinar Cell Neoplasms
+    - Adenomas and Adenocarcinomas
+    - Adnexal and Skin Appendage Neoplasms
+    Term:
+    - Origin: caDSR
+      Original Source: CDS
+      Code: '13471160'
+      Value: Diagnosis Disease or Disorder Morphology Disease
+      Version: '1.00'
+  age_at_diagnosis:
+    Desc: Participant age at relevant diagnosis
+    Type: integer
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: '10609539'
+      Value: Subject Age at Diagnosis Integer
+      Version: '1.00'
+  # inquiry
+  inquiry_acronym:
+    Desc: Short acronym or other inquiry desginator
+    Type: string
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: '11459812'
+      Value: Study Short Name Text
+      Version: '1.00'
+  inquiry_description:
+    Desc: Human-readable inquiry description
+    Type: string
+    Req: Preferred
+  short_description:
+    Desc: 'TODO'
+    Type: string
+    Req: Preferred
+  inquiry_external_url:
+    Desc: Website or other url relevant to inquiry
+    Type: url
+    Req: Preferred
+  inquiry_name:
+    Desc: Official name of inquiry
+    Type: string
+    Req: 'Yes'
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: '11459810'
+      Value: Study Name
+      Version: '1.00'
+  primary_investigator_name:
+    Desc: Name of principal investigator
+    Type: string
+    Req: Preferred
+  primary_investigator_email:
+    Desc: Email of principal investigator
+    Type: string
+    Req: Preferred
+  co_investigator_name:
+    Desc: Name of co-principal investigator
+    Type: string
+  co_investigator_email:
+    Desc: Email of co-principal investigator
+    Type: string
+  # specimen
+  specimen_description:
+    Desc: Text description of a specimen
+    Type: string
+    Term:
+    - Origin: caDSR
+      Original Source: CCR
+      Code: '2003907'
+      Value: Sample Description Text
+      Version: '3.00'
+  specimen_type_category:
+    Desc: The kind of material that forms the specimen.
+    Enum:
+    - Analyte
+    - Blood
+    - Ascites
+    - Bone Marrow
+    - Cells
+    - Stool
+    - Body Fluid or Substance
+    - Sputum
+    - Urine
+    - Tissue
+    - Mouth Rinse
+    - Not Reported
+    - Unknown
+    - Xenograft
+    - Skin
+    - Saliva
+    - RNA
+    - DNA
+    - Central Nervous System
+    - Cell Line
+    Term:
+    - Origin: caDSR
+      Original Source: CDS
+      Code: '12445832'
+      Value: Specimen Material Biospecimen Category
+      Version: '1.00'
+  specimen_age_at_collection:
+    Desc: Number of days to collection, relative to index date
+    Type: integer
+    Term:
+    - Origin: caDSR
+      Original Source: CDS
+      Code: '14473376'
+      Value: Subject Age At Specimen Collection Day Count
+      Version: '1.00'
+  specimen_anatomic_site:
+    Desc: Anatomic site from which specimen was collected
+    Enum:
+    - Bone marrow
+    - Not specified in data
+    - Unknowm
+    Term:
+    - Origin: caDSR
+      Code: '12083894'
+      Value: Specimen Original Anatomic Site Uberon Identifier
+      Version: '1.00'
+  specimen_id:
+    Desc: specimen identifier as submitted by requestor
+    Type: string
+    Req: 'Yes'
+    Key: true
+    Term:
+    - Origin: caDSR
+      Code: '6921892'
+      Value: Biospecimen Source Laboratory Identifier
+      Version: '1.00'
+  specimen_tumor_status:
+    Desc: Tumor or normal status
+    Enum:
+    - Normal
+    - Not Reported
+    - Peritumoral
+    - Tumor
+    - Unknown
+    Req: 'Yes'
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: '14688604'
+      Value: Specimen Neoplasm Category
+      Version: '1.00'
+  specimen_type:
+    Desc: Tissue type of this specimen
+    Enum:
+    - Analyte
+    - Ascites
+    - Blood
+    Req: 'Yes'
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: "11253427"
+      Value: Specimen Material OBIB Source
+      Version: '1.00'
+  # treatment
+  treatment_id:
+    Desc: The property treatment_id is a compound property, combining the parent property participant.inquiry_participant_id, string character "_" in the middle as the connector, and the property therapeutic_agents.
+    Type: string
+    Key: true
+  days_to_treatment:
+    Desc: Days to start of treatment, relative to index date
+    Type: integer
+    Term:
+    - Origin: caDSR
+      Original Source: CDS
+      Code: '12305542'
+      Value: Subject Age at Treatment Assignment Day Count
+      Version: '1.00'
+  response:
+    Desc: Text term that describes the patient's final outcome after the treatment was administered.
+    Enum:
+    - Complete Response
+    - No Evidence of Disease
+    - No Response
+    Term:
+    - Origin: caDSR
+      Code: "13383448"
+      Value: Disease Response Assessment Outcome
+      Version: '1.00'
+  treatment_type:
+    Desc: Text term that describes the kind of treatment administered
+    Enum:
+    - Targeted Molecular Therapy
+    - Immunotherapy
+    Term:
+    - Origin: caDSR
+      Original Source: TCGA
+      Code: '14737565'
+      Value: Therapeutic Procedure Performed Type
+      Version: '1.00'
+  therapeutic_agents:
+    Desc: Text identification of the individual agent(s) used as part of a treatment regimen.
+    Enum:
+    - 10-Deacetyltaxol
+    - 11C Topotecan
+    - Unknown
+    - Not Reported
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: '14913015'
+      Value: Therapeutic Procedure Pharmacologic Substance or Chemical NCI Thesaurus Name
+      Version: '1.00'
+  # initiative
+  initiative_acronym:
+    Desc: The name of the initiative under which related studies will be grouped, expressed in the form of the acronym by which it will identified within the UI. <br>This property is used as the key via which inquiry records can be associated with the appropriate initiative during data loading, and to identify the correct records during data updates.
+    Src: Internally-curated
+    Type: string
+    Req: 'Yes'
+    Key: true
+  initiative_external_url:
+    Desc: The external url to which users should be directed in order to learn more about the initiative.
+    Src: Internally-curated
+    Type: string
+    Req: Preferred
+  initiative_full_description:
+    Desc: A more detailed, multiple sentence description of the initiative.
+    Src: Internally-curated
+    Type: string
+    Req: Preferred
+  initiative_name:
+    Desc: The name of the initiative under which related studies will be grouped, in full text and unabbreviated form, exactly as it will be displayed within the UI.
+    Src: Internally-curated
+    Type: string
+    Req: 'Yes'
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: '11444542'
+      Value: Program Name Text
+      Version: '1.00'
+  initiative_short_description:
+    Desc: An abbreviated, single sentence description of the initiative.
+    Src: Internally-curated
+    Type: string
+    Req: Preferred
+  initiative_short_name:
+    Desc: An acronym or abbreviated form of the title of a broad framework of goals under which related projects or other research activities are grouped. Example - CPTAC
+    Type: string
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: "11459801"
+      Value: Program Short Name Text
+      Version: '1.00'
+
+Relationships:
+  of_initiative:
+    Props: null
+    Mul: many_to_one
+    Ends:
+      - Src: inquiry
+        Dst: initiative
+  of_inquiry:
+    Props: null
+    Mul: many_to_one
+    Ends:
+      - Src: participant
+        Dst: inquiry
+      - Src: file
+        Dst: inquiry
+  of_participant:
+    Props: null
+    Mul: many_to_one
+    Ends:
+      - Src: diagnosis
+        Dst: participant
+      - Src: specimen
+        Dst: participant
+      - Src: file
+        Dst: participant
+        Mul: many_to_many
+      - Src: treatment
+        Dst: participant
+  from_specimen:
+    Props: null
+    Mul: many_to_many
+    Ends:
+      - Src: file
+        Dst: specimen
+  of_file:
+    Props: null
+    Mul: many_to_one
+    Ends:
+      - Src: genomic_info
+        Dst: file
+      - Src: image
+        Dst: file
+        Mul: one_to_one
+      - Src: proteomic
+        Dst: file
