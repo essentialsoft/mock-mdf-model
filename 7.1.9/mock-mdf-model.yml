@@ -59,20 +59,6 @@ Nodes:
       - vital_status
       - age_at_diagnosis
 
-
-  treatment:
-    Desc: "Taciti velit tempor vivamus dignissim vestibulum erat."
-    Tags:
-      Category: case
-      Assignment: core
-      Class: secondary
-      Template: 'Yes'
-    Props:
-      - treatment_id
-      - treatment_type
-      - days_to_treatment
-      - response
-
   specimen:
     Desc: "Specimen tissue type collected from the participant."
     Tags:
@@ -303,55 +289,6 @@ PropDefinitions:
       Code: "11253427"
       Value: Specimen Material OBIB Source
       Version: '1.00'
-  # treatment
-  treatment_id:
-    Desc: The property treatment_id is a compound property, combining the parent property participant.inquiry_participant_id, string character "_" in the middle as the connector, and the property therapeutic_agents.
-    Type: string
-    Key: true
-  days_to_treatment:
-    Desc: Days to start of treatment, relative to index date
-    Type: integer
-    Term:
-    - Origin: caDSR
-      Original Source: CDS
-      Code: '12305542'
-      Value: Subject Age at Treatment Assignment Day Count
-      Version: '1.00'
-  response:
-    Desc: Text term that describes the patient's final outcome after the treatment was administered.
-    Enum:
-    - Complete Response
-    - No Evidence of Disease
-    - No Response
-    Term:
-    - Origin: caDSR
-      Code: "13383448"
-      Value: Disease Response Assessment Outcome
-      Version: '1.00'
-  treatment_type:
-    Desc: Text term that describes the kind of treatment administered
-    Enum:
-    - Targeted Molecular Therapy
-    - Immunotherapy
-    Term:
-    - Origin: caDSR
-      Original Source: TCGA
-      Code: '14737565'
-      Value: Therapeutic Procedure Performed Type
-      Version: '1.00'
-  therapeutic_agents:
-    Desc: Text identification of the individual agent(s) used as part of a treatment regimen.
-    Enum:
-    - 10-Deacetyltaxol
-    - 11C Topotecan
-    - Unknown
-    - Not Reported
-    Term:
-    - Origin: caDSR
-      Original Source: DSS
-      Code: '14913015'
-      Value: Therapeutic Procedure Pharmacologic Substance or Chemical NCI Thesaurus Name
-      Version: '1.00'
   # initiative
   initiative_acronym:
     Desc: The name of the initiative under which related studies will be grouped, expressed in the form of the acronym by which it will identified within the UI. <br>This property is used as the key via which inquiry records can be associated with the appropriate initiative during data loading, and to identify the correct records during data updates.
@@ -421,8 +358,6 @@ Relationships:
       - Src: file
         Dst: participant
         Mul: many_to_many
-      - Src: treatment
-        Dst: participant
   from_specimen:
     Props: null
     Mul: many_to_many
