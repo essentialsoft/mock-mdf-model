@@ -106,10 +106,10 @@ PropDefinitions:
     Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Enum:
     - Unspecified
-    - Unknown
-    - Dead
     - Alive
+    - Unknown
     - Not reported
+    - Some Value
     Term:
     - Origin: caDSR
       Original Source: NCI Std
@@ -128,9 +128,11 @@ PropDefinitions:
   disease_type:
     Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Enum:
-    - Acinar Cell Neoplasms
-    - Adenomas and Adenocarcinomas
-    - Adnexal and Skin Appendage Neoplasms
+    - Lorem ipsum
+    - Dolor sit amet
+    - Consectetur adipiscing elit
+    - Sed do eiusmod
+    - Ut enim ad minim veniam
     Term:
     - Origin: caDSR
       Original Source: CDS
@@ -205,26 +207,13 @@ PropDefinitions:
   specimen_type_category:
     Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Enum:
-    - Analyte
-    - Blood
-    - Ascites
-    - Bone Marrow
-    - Cells
-    - Stool
-    - Body Fluid or Substance
-    - Sputum
-    - Urine
-    - Tissue
-    - Mouth Rinse
-    - Not Reported
-    - Unknown
-    - Xenograft
-    - Skin
-    - Saliva
-    - RNA
-    - DNA
-    - Central Nervous System
-    - Cell Line
+    - Lor
+    - Ipsum
+    - Dolor
+    - Sit
+    - Amet
+    - Consectetur
+    - Adipiscing
     Term:
     - Origin: caDSR
       Original Source: CDS
@@ -243,9 +232,11 @@ PropDefinitions:
   specimen_anatomic_site:
     Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Enum:
-    - Bone marrow
-    - Not specified in data
-    - Unknowm
+    - Unknown
+    - Consectetur
+    - Dolor
+    - Sit
+    - Amet
     Term:
     - Origin: caDSR
       Code: '12083894'
@@ -264,11 +255,11 @@ PropDefinitions:
   specimen_tumor_status:
     Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Enum:
-    - Normal
+    - Nominal
     - Not Reported
-    - Peritumoral
-    - Tumor
     - Unknown
+    - XYZ
+    - ABC
     Req: 'Yes'
     Term:
     - Origin: caDSR
@@ -279,9 +270,10 @@ PropDefinitions:
   specimen_type:
     Desc: "Condimentum potenti at malesuada tellus fermentum convallis."
     Enum:
-    - Analyte
-    - Ascites
-    - Blood
+    - XYZ
+    - ABC
+    - Unknown
+    - Not Reported
     Req: 'Yes'
     Term:
     - Origin: caDSR
