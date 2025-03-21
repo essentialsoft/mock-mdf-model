@@ -1,7 +1,6 @@
 {
   "model-files": [
-    "mock-mdf-model.yml",
-    "model-props.yml"
+    "mock-mdf-model.yml"
   ],
   "readme-file": "README.md",
   "release-notes": "version-history.md",
